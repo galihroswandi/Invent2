@@ -1,7 +1,7 @@
 // Cek Session login
 const session = sessionStorage.getItem('id');
 if( session ){
-    document.location.href = 'dash/dashbor.html';
+    document.location.href = 'http://localhost:8080/inventoryrpl/';
 }
 
 // Cek Cookie
@@ -18,7 +18,7 @@ if( !getCookie ){
 
     $.ajax({
         type : "POST",
-        url : "../php/login/CekCookie.php",
+        url : "functions/php/login/CekCookie.php",
         data : `username=${id}&id_admin=${id_admin}`,
         dataType : "JSON",
         success :  (response) => {
@@ -26,7 +26,7 @@ if( !getCookie ){
                 sessionStorage.setItem("id", response.hash);
                 sessionStorage.setItem("I", response.id_admin);
 
-                document.location.href = 'dash/dashbor.html';
+                document.location.href = 'http://localhost:8080/inventoryrpl/';
             }
         }
     })
@@ -69,12 +69,11 @@ $(document).ready(function(){
 
         $.ajax({
             type : "POST",
-            url : "../php/login/LoginCheck.php",
+            url : "functions/php/login/LoginCheck.php",
             data : `username=${username}&password=${password}&check=${check}`,
             dataType : "JSON",
             success : (response) => {
                 if( response.status == 1 ){
-                    console.log(response.id_admin)
                     if( remember ){
                         sessionStorage.setItem("id", response.hash);
                         sessionStorage.setItem("I", response.id_admin);
@@ -84,7 +83,7 @@ $(document).ready(function(){
                         sessionStorage.setItem("id", response.hash);
                         sessionStorage.setItem("I", response.id_admin);
                     }    
-                    document.location.href = 'dash/dashbor.html';
+                    document.location.href = 'http://localhost:8080/inventoryrpl/';
                 }else{
                     document.getElementById('message').innerHTML = `<i class="text-sm -mt-1">${response.msg}</i>`;
                 }
