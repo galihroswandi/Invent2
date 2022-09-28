@@ -8,8 +8,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="kd_pinjam">Kode Pinjam</label>
-                            <input type="text" class="form-control" id="kd_pinjam"
+                            <label for="kd_ubah_pinjam">Kode Pinjam</label>
+                            <input type="text" class="form-control" id="kd_ubah_pinjam"
                                 disabled>
                         </div>
                     </div>
@@ -17,8 +17,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="nm_brg">Nama Barang :</label>
-                                <select type="text" name="" id="nm_brg" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[100%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
+                            <label for="nm_ubahpinjam_brg">Nama Barang :</label>
+                                <select type="text" name="" id="nm_ubahpinjam_brg" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[100%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
                                     <option value="">-- Nama Barang --</option>
                                 </select>
                         </div>
@@ -34,8 +34,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="nm_ruangan">Nama Ruangan :</label>
-                                <select type="text" name="" id="nm_ruangan" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[106%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
+                            <label for="nm_ubahpinjam_ruangan">Nama Ruangan :</label>
+                                <select type="text" name="" id="nm_ubahpinjam_ruangan" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[106%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
                                     <option value="">-- Nama Ruangan --</option>
                                 </select>
                         </div>
@@ -52,8 +52,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="tgl_pinjam">Tanggal Pinjam :</label>
-                            <input type="date" class="form-control input-bawah w-[106%]" id="tgl_pinjam" placeholder="0" autocomplete="off">
+                            <label for="tgl_ubah_pinjam">Tanggal Pinjam :</label>
+                            <input type="date" class="form-control input-bawah w-[106%]" id="tgl_ubah_pinjam" placeholder="0" autocomplete="off">
                         </div>
                     </div>
                 </div>
@@ -61,13 +61,13 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="status">Status Pinjam :</label>
-                            <input type="text" class="form-control input-bawah w-[106%]" id="status" placeholder="" autocomplete="off"></input>
+                            <input type="text" class="form-control input-bawah w-[106%]" id="status_ubah_pinjam" placeholder="" autocomplete="off"></input>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 d-flex justify-content-end">
-                        <button type="submit" id="submit" class="btn btn-sm bg-blue-800 text-slate-50 me-1 mb-1">Ubah</button>
+                        <button type="submit" id="ubah-peminjaman" class="btn btn-sm bg-blue-800 text-slate-50 me-1 mb-1">Ubah</button>
                         <button type="submit" class="btn btn-sm btn-light-secondary me-1 mb-1 hBack">Kembali</button>
                     </div>
                 </div>
@@ -76,8 +76,96 @@
     </div>
 </div>
 
+<style>
+    #notif{
+        position: absolute;
+        z-index: 99999;
+        bottom: -15rem;
+        top: 0;
+        right: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        display: none;
+    }
+    #notif > .pesan{
+        position: fixed;
+        padding: 5rem;
+        /* top: 10%; */
+        top: -100rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: .5rem;
+        animation: animate2 1s cubic-bezier(0.03, 0.01, 0, 1.83) forwards;
+        background-color: rgba(27, 27, 41, .8);
+    }
+    @keyframes animate2 {
+        0%{
+            opacity: 0;
+            display: none;
+            height: 1rem;
+        }100%{
+            opacity: 1;
+            display: flex;
+        }
+    }
+    #notif > .pesan > .logo{
+        width: 50%;
+        height: 50%;
+    }
+    #notif > .pesan > .message > h1{
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #fff;
+        animation: animate1 .6s alternate forwards;
+        animation-timing-function: cubic-bezier(0.47, 0.08, 0.62, 1.4);
+        opacity: 0;
+    }
+    @keyframes animate1 {
+        0%{
+            font-size: 0;
+            opacity: 0;
+        }100%{
+            font-size: 1.8rem;
+            margin-bottom: .5rem;
+            opacity: 1;
+        }
+    }
+</style>
+<!-- Notification -->
+<div class="notif" id="notif">
+    <div class="pesan pb-5">
+        <div class="close font-bold text-2xl text-white -mt-[4.5rem] text-right w-[150%] box-border hover:cursor-pointer" style="text-align: right;">X</div>
+        <div class="logo d-flex justify-content-center align-center my-4" style="width: 5rem; background-color: #fff; border-radius: 50%; padding: -1rem;">
+            <img src="assets/images/gif/success4.gif" alt="">
+        </div>
+        <div class="message">
+            
+        </div>
+    </div>
+</div>
+<!-- End of notification -->
+
+<!-- pop up box -->
+<style>
+    .modal-popup{
+        display: none;
+    }
+</style>
+<div class="modal-popup text-[#1B1B29] bg-[#1b1b2980] fixed inset-0 z-50 flex-row justify-content-center items-center">
+    <div class="w-[350px] h-[9rem] bg-[#fff] rounded-[.5rem] flex flex-col items-center" id="box">
+        <span class="messege font-semibold text-center text-sm md:text-sm lg:text-md mt-[2.5rem] capitalize">apakah anda yakin ingin logout ?</span>
+        <div class="confirm flex items-center mt-[3rem] mb-5 ml-[12rem]">
+            <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="confirmErr">Tidak</a>
+            <a href="logout.php" class="confirmScs font-semibold text-xs md:text-sm lg:text-md mx-[1rem]">Ya</a>
+        </div>
+    </div>
+</div>
+<!-- end of pop up box -->
 
 <!-- JS UBAH -->
 <script src="functions/js/jquery.js"></script>
-<script src="functions/js/ruangan/ruangan.js"></script>
-<script src="functions/js/ruangan/ubah-ruangan.js"></script>
+<script src="functions/js/peminjaman/ubah-peminjaman.js"></script>

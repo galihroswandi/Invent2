@@ -24,8 +24,8 @@
                         <div class="row">
                             <div class="col-11">
                                 <div class="form-group">
-                                    <label for="nm_brg">Nama Barang :</label>
-                                        <select type="text" name="" id="nm_brg" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[108.3%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
+                                    <label for="nm_pinjam_brg">Nama Barang :</label>
+                                        <select type="text" name="" id="nm_pinjam_brg" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[108.3%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
                                             <option value="">-- Nama Barang --</option>
                                         </select>
                                 </div>
@@ -42,8 +42,8 @@
                             <div class="col-11">
                                 <div class="form-group">
                                     <div class="form-group">
-                                        <label for="nm_ruangan">Nama Ruangan :</label>
-                                        <select type="text" name="" id="nm_ruangan" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[111%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
+                                        <label for="nm_pinjam_ruangan">Nama Ruangan :</label>
+                                        <select type="text" name="" id="nm_pinjam_ruangan" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[111%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
                                             <option value="">-- Nama Ruangan --</option>
                                         </select>
                                     </div>
@@ -69,8 +69,8 @@
                         <div class="row">
                             <div class="col-11">
                                 <div class="form-group">
-                                    <label for="status">Status Pinjam :</label>
-                                    <input type="text" class="form-control input-bawah w-[111%]" id="status" placeholder="" autocomplete="off"></input>
+                                    <label for="status_pinjam">Status Pinjam :</label>
+                                    <input type="text" class="form-control input-bawah w-[111%]" id="status_pinjam" placeholder="" autocomplete="off"></input>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="targetDataPeminjaman">
-                                        <tr>  
+                                        <!-- <tr>  
                                             <td>001</td>
                                             <td>Mouse Logitech</td>
                                             <td>LAB 3</td>
@@ -118,7 +118,7 @@
                                                     </svg>
                                                 </button>
                                             </td>
-                                        </tr>  
+                                        </tr>   -->
                                     </tbody>
                                 </table>
                             </div>
@@ -128,3 +128,107 @@
             </div>
         </section>
     </div>
+
+    <style>
+        #notif{
+            position: absolute;
+            z-index: 99999;
+            bottom: -15rem;
+            top: 0;
+            right: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            display: none;
+        }
+        #notif > .pesan{
+            position: fixed;
+            padding: 5rem;
+            /* top: 10%; */
+            top: -100rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: .5rem;
+            animation: animate2 1s cubic-bezier(0.03, 0.01, 0, 1.83) forwards;
+            background-color: rgba(27, 27, 41, .8);
+        }
+        @keyframes animate2 {
+            0%{
+                opacity: 0;
+                display: none;
+                height: 1rem;
+            }100%{
+                opacity: 1;
+                display: flex;
+            }
+        }
+        #notif > .pesan > .logo{
+            width: 50%;
+            height: 50%;
+        }
+        #notif > .pesan > .message > h1{
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #fff;
+            animation: animate1 .6s alternate forwards;
+            animation-timing-function: cubic-bezier(0.47, 0.08, 0.62, 1.4);
+            opacity: 0;
+        }
+        @keyframes animate1 {
+            0%{
+                font-size: 0;
+                opacity: 0;
+            }100%{
+                font-size: 1.8rem;
+                margin-bottom: .5rem;
+                opacity: 1;
+            }
+        }
+    </style>
+    <!-- Notification -->
+    <div class="notif absolute z-99999" id="notif">
+        <div class="pesan pb-5">
+            <div class="close font-bold text-2xl text-white -mt-[4.5rem] text-right w-[135%] box-border hover:cursor-pointer" style="text-align: right;">X</div>
+            <div class="logo d-flex justify-content-center align-center my-4" style="width: 5rem; background-color: #fff; border-radius: 50%; padding: -1rem;">
+                <img src="assets/images/gif/success4.gif" alt="">
+            </div>
+            <div class="message">
+                
+            </div>
+        </div>
+    </div>
+    <!-- End of Notification -->
+
+    <!-- pop up box -->
+    <style>
+        .modal-popup{
+            display: none;
+        }
+        .modal-popup-del{
+            display: none;
+        }
+    </style>
+    <div class="modal-popup text-[#1B1B29] bg-[#1b1b2980] fixed inset-0 z-50 flex-row justify-content-center items-center">
+        <div class="w-[350px] h-[9rem] bg-[#fff] rounded-[.5rem] flex flex-col items-center" id="box">
+            <span class="messege font-semibold text-center text-sm md:text-sm lg:text-md mt-[2.5rem] capitalize" id="textConfirm">apakah anda yakin ingin logout ?</span>
+            <div class="confirm flex items-center mt-[3rem] mb-5 ml-[12rem]">
+                <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="confirmErr">Tidak</a>
+                <a href="logout.php" class="confirmScs font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="success">Ya</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- popup confirm hapus -->
+    <div class="modal-popup-del text-[#1B1B29] bg-[#1b1b2980] fixed inset-0 z-50 flex-row justify-content-center items-center">
+        <div class="w-[350px] h-[9rem] bg-[#fff] rounded-[.5rem] flex flex-col items-center" id="box">
+            <span class="messege font-semibold text-center text-sm md:text-sm lg:text-md mt-[2.5rem] capitalize" id="textConfirm">Apakah Yakin Ingin Menghapus ?</span>
+            <div class="confirm flex items-center mt-[3rem] mb-5 ml-[12rem]">
+                <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="confirmErr">Tidak</a>
+                <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="success">Ya</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of pop up box -->
