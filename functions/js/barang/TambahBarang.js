@@ -1,8 +1,3 @@
-// cek session login
-const session = sessionStorage.getItem('id');
-if( !session ){
-    document.location.href = 'http://localhost:8080/inventoryrpl/';
-}
 $(document).ready(function(){
     
     getKategori();
@@ -168,9 +163,9 @@ $(document).ready(function(){
     // event popup box
     document.body.addEventListener('click', (e) => {
         if( e.target.id == 'logout' ){
-        popup.style.display = 'flex';
+            popup.style.display = 'flex';
         }else if(e.target.id == 'confirmErr'){
-        popup.style.display = 'none';
+            popup.style.display = 'none';
         }
     })
     const confirmScs = document.querySelector('.confirm > .confirmScs');
@@ -178,6 +173,6 @@ $(document).ready(function(){
         sessionStorage.removeItem('id');
         sessionStorage.removeItem('I');
 
-        document.location.href = '../login.html';
-    })
+        document.location.href = 'login.php';
+    }) 
 })

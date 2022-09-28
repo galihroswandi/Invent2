@@ -1,11 +1,5 @@
 $(document).ready(function(){
 
-    // cek session login
-    const session = sessionStorage.getItem('id');
-    if( !session ){
-        document.location.href = 'http://localhost:8080/inventoryrpl/';
-    }
-    
     $('#btn-add').click(function(){
         prosesTambahData();
     })

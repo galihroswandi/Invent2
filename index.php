@@ -17,3 +17,10 @@
     //    echo '<script>window.location="login.php";</script>';
     //}
 ?>
+<script>
+    // cek session login
+    const session = sessionStorage.getItem('id');
+    if( !session ){
+        document.location.href = 'login.html';
+    }
+</script>

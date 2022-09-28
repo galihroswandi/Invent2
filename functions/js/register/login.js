@@ -1,8 +1,8 @@
 // Cek Session login
 const session = sessionStorage.getItem('id');
-if( session ){
-    document.location.href = 'http://localhost:8080/inventoryrpl/';
-}
+// if( session ){
+//     document.location.href = 'http://localhost:8080/inventoryrpl/';
+// }
 
 // Cek Cookie
 const getCookie = document.cookie
@@ -26,7 +26,7 @@ if( !getCookie ){
                 sessionStorage.setItem("id", response.hash);
                 sessionStorage.setItem("I", response.id_admin);
 
-                document.location.href = 'http://localhost:8080/inventoryrpl/';
+                // document.location.href = 'http://localhost:8080/inventoryrpl/';
             }
         }
     })

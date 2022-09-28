@@ -138,22 +138,22 @@
 </div>
 <!-- End of Notification -->
 
-<!-- pop up box -->
 <style>
     .modal-popup{
         display: none;
     }
 </style>
+<!-- Popup Logout -->
 <div class="modal-popup text-[#1B1B29] bg-[#1b1b2980] fixed inset-0 z-50 flex-row justify-content-center items-center">
     <div class="w-[350px] h-[9rem] bg-[#fff] rounded-[.5rem] flex flex-col items-center" id="box">
-            <span class="messege font-semibold text-center text-sm md:text-sm lg:text-md mt-[2.5rem] capitalize">apakah anda yakin ingin logout ?</span>
-            <div class="confirm flex items-center mt-[3rem] mb-5 ml-[12rem]">
-                <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="confirmErr">Tidak</a>
-                <a href="?p=register/logout" class="confirmScs font-semibold text-xs md:text-sm lg:text-md mx-[1rem]">Ya</a>
-            </div>
+        <span class="messege font-semibold text-center text-sm md:text-sm lg:text-md mt-[2.5rem] capitalize" id="textConfirm">apakah anda yakin ingin logout ?</span>
+        <div class="confirm flex items-center mt-[3rem] mb-5 ml-[12rem]">
+            <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="confirmErr">Tidak</a>
+            <a href="logout.php" class="confirmScs font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="success">Ya</a>
+        </div>
     </div>
 </div>
-<!-- end of pop up box -->
+<!-- end of Popup Logout -->
 
 <!-- JS TAMBAH -->
 <script src="functions/js/jquery.js"></script>

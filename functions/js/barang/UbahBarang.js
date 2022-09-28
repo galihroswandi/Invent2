@@ -1,8 +1,3 @@
-// cek session login
-const session = sessionStorage.getItem('id');
-if( !session ){
-    document.location.href = 'http://localhost:8080/inventoryrpl/';
-}
 $(document).ready(function(){
 
     function getUrlVars(param=null){
@@ -203,6 +198,6 @@ $(document).ready(function(){
         sessionStorage.removeItem('id');
         sessionStorage.removeItem('I');
 
-        document.location.href = '../login.html';
+        document.location.href = 'login.html';
     })
 })

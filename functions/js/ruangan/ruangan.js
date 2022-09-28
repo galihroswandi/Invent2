@@ -1,11 +1,5 @@
 $(document).ready(function(){
 
-    // cek session login
-    const session = sessionStorage.getItem('id');
-    if( !session ){
-        document.location.href = 'http://localhost:8080/inventoryrpl/';
-    }
-
     const hapusData = (id_ruangan) => {
 
         const notif_header = document.getElementById('notif-header');
@@ -165,7 +159,7 @@ $(document).ready(function(){
         sessionStorage.removeItem('id');
         sessionStorage.removeItem('I');
 
-        document.location.href = '../login.html';
+        document.location.href = 'login.html';
     })
 
 })
