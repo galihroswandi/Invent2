@@ -1,7 +1,7 @@
 // Cek Session login
 const session = sessionStorage.getItem('id');
 if( !session ){
-    document.location.href = 'http://localhost:8080/inventoryrpl/';
+    document.location.href = 'http://localhost:8080/inventoryrpl/login.html';
 }
 
 document.body.onload = () => {
