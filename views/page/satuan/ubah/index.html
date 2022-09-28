@@ -1,0 +1,114 @@
+<div class="page-heading flex">
+    <h3 class="" id="titleTable">Ubah Satuan</h3>
+</div>
+<div class="card col-md-7">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="satuan">Satuan :</label>
+                    <input type="text" class="form-control" id="satuan" placeholder="-" autocomplete="off">
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col-12 d-flex justify-content-end">
+            <button type="submit" id="submit" class="btn btn-sm bg-blue-800 text-slate-50 me-1 mb-1">Ubah</button>
+            <button type="submit" class="btn btn-sm btn-light-secondary me-1 mb-1 hBack">Kembali</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    #notif{
+        position: absolute;
+        z-index: 99999;
+        bottom: -15rem;
+        top: 0;
+        right: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        display: none;
+    }
+    #notif > .pesan{
+        position: fixed;
+        padding: 5rem;
+        /* top: 10%; */
+        top: -100rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: .5rem;
+        animation: animate2 1s cubic-bezier(0.03, 0.01, 0, 1.83) forwards;
+        background-color: rgba(27, 27, 41, .8);
+    }
+    @keyframes animate2 {
+        0%{
+            opacity: 0;
+            display: none;
+            height: 1rem;
+        }100%{
+            opacity: 1;
+            display: flex;
+        }
+    }
+    #notif > .pesan > .logo{
+        width: 50%;
+        height: 50%;
+    }
+    #notif > .pesan > .message > h1{
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #fff;
+        animation: animate1 .6s alternate forwards;
+        animation-timing-function: cubic-bezier(0.47, 0.08, 0.62, 1.4);
+        opacity: 0;
+    }
+    @keyframes animate1 {
+        0%{
+            font-size: 0;
+            opacity: 0;
+        }100%{
+            font-size: 1.8rem;
+            margin-bottom: .5rem;
+            opacity: 1;
+        }
+    }
+</style>
+<!-- Notification -->
+<div class="notif" id="notif">
+    <div class="pesan pb-5">
+        <div class="close font-bold text-2xl text-white -mt-[4.5rem] text-right w-[150%] box-border hover:cursor-pointer" style="text-align: right;">X</div>
+        <div class="logo d-flex justify-content-center align-center my-4" style="width: 5rem; background-color: #fff; border-radius: 50%; padding: -1rem;">
+            <img src="assets/images/gif/success4.gif" alt="">
+        </div>
+        <div class="message">
+            
+        </div>
+    </div>
+</div>
+<!-- End of Notification -->
+
+<!-- pop up box -->
+    <style>
+    .modal-popup{
+        display: none;
+    }
+</style>
+<div class="modal-popup text-[#1B1B29] bg-[#1b1b2980] fixed inset-0 z-50 flex-row justify-content-center items-center">
+    <div class="w-[350px] h-[9rem] bg-[#fff] rounded-[.5rem] flex flex-col items-center" id="box">
+        <span class="messege font-semibold text-center text-sm md:text-sm lg:text-md mt-[2.5rem] capitalize">apakah anda yakin ingin logout ?</span>
+        <div class="confirm flex items-center mt-[3rem] mb-5 ml-[12rem]">
+            <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="confirmErr">Tidak</a>
+            <a href="../logout.php" class="confirmScs font-semibold text-xs md:text-sm lg:text-md mx-[1rem]">Ya</a>
+        </div>
+    </div>
+</div>
+<!-- end of pop up box -->
+
+<script src="functions/js/jquery.js"></script>
+<script src="functions/js/satuan/satuan.js"></script>
+<script src="functions/js/satuan/ubah-satuan.js"></script>

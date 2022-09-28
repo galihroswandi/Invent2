@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Inventory</title>
+    <link rel="stylesheet" href="../../../assets/css/app.css">
+    <link rel="stylesheet" href="../../../assets/css/pages/auth.css">
+    <!-- <link rel="shortcut icon" href="../../../assets/images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../assets/images/logo/logoinvent.png" type="image/png"> -->
+    <link rel="stylesheet" href="../../../assets/css/login-css/animation.css">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Respon */
+        @media only screen and (max-width: 1360px) {
+            .eye {
+                margin-left: -50%;
+            }
+        }
+        @media only screen and (max-width: 1333px) {
+            .eye {
+                margin-left: -70%;
+            }
+        }
+        @media only screen and (max-width: 1320px) {
+            .eye {
+                margin-left: -85%;
+            }
+        }
+        @media only screen and (max-width: 1310px) {
+            .eye {
+                margin-left: -100%;
+            }
+        }
+        @media only screen and (max-width: 1301px) {
+            .eye {
+                margin-left: -120%;
+            }
+        }
+        @media only screen and (max-width: 991px) {
+            .eye {
+                position: absolute;
+                margin-left: 1150%;
+            }
+            .bg-wall {
+                width: auto;
+                height: auto;
+            }
+            .bg-financial {
+                visibility: hidden;
+            }
+            .bg-creative {
+                visibility: hidden;
+            }
+            .bg-programmer {
+                visibility: hidden;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body class="scroll-smooth">
+    <div id="auth" style="max-height: 100vh; overflow: hidden;">
+        
+        <div class="row h-100">
+            <div class="col-lg-5 col-12">
+                <div id="auth-left" style="margin-top: -35px;">
+                    <div class="auth-logo flex">
+                        <a href="login.html"><img src="../../../assets/images/logo/logo.png" alt="Logo" id="logo" width="30rem"></a>
+                        <h1 class="title-logo ml-3 mt-[1px] text-[25px] font-bold">Simpen App</h1>
+                    </div>
+                    
+                    <div class="content-title">
+                        <h1 class="title auth-title font-bold mt-[-50px]"><span class="auto-type"></span></h1>
+                    </div>
+                    <p class="auth-subtitle mb-1">Login dengan data Anda yang sudah terdaftaran.</p>
+                    <p id="message" style="color: red;"></p>
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="text" class="form-control form-control-md" placeholder="Username" id="username" autocomplete="off">
+                        <div class="form-control-icon">
+                            <i class="bi bi-person"></i>
+                        </div>
+                    </div>
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="password" maxlength="26" class="form-control form-control-md" placeholder="Password" style="overflow: hidden;" id="password" autocomplete="off">
+                        <div class="form-control-icon">
+                            <i class="bi bi-shield-lock"></i>
+                            <button class="eye" style="width: 2px;" id="showPassword">
+                                <i class="bi bi-eye ml-[235px] bg-white px-1"></i>
+                            </button>
+                            <!-- <i class="bi bi-eye-slash"></i> -->
+                        </div>
+                    </div>
+                    <div class="form-check form-check-md d-flex align-items-end mb-[30px]">
+                        <input class="form-check-input me-2" type="checkbox" value="remember" name="remember" id="check">
+                        <label class="form-check-label text-gray-600" for="check">
+                            Simpan kata sandi
+                        </label>
+                    </div>
+                    <a class="btn-login text-[16px] hover:bg-blue-900 hover:text-gray-600 shadow-lg py-2 px-[25%] bg-slate-50 shadow-xl rounded-lg hover:shadow-lg bg-blue-800 text-white transition duration-300 ease-in-out font-semibold hover:cursor-pointer" id="btn-login">Log in</a>
+                </div>
+            </div>
+            <!-- bg image -->
+                <img class="bg-programmer" src="../../../assets/images/flat/programmer.svg" alt="">
+                <div id="auth-right.">
+                <img class="bg-creative" src="../../../assets/images/flat/creative.svg" alt="">
+                <img class="bg-financial" src="../../../assets/images/flat/financial.svg" alt="">
+                <div class="bg-wall"></div>
+            <!-- end bg image -->
+                <div class="auth-right absolute ml-[200px] mt-[-500px]">
+                    <div class="particle relative">
+                        <span class="part1"></span>
+                        <span class="part2"></span>
+                        <span class="part3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["Log", "In", "Log In."],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true
+        })
+    </script>
+
+    <script type="text/javascript" src="../../functions/js/jquery.js"></script>
+    <script type="text/javascript" src="../../functions/js/dash/login.js"></script>
+</body>
+
+</html>

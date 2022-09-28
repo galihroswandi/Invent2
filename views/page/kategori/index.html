@@ -1,0 +1,155 @@
+<!-- Header Notification -->
+<style>
+    #notif-header{
+        display: none;
+    }
+</style>
+<div class="notification p-2 py-3 pr-5 justify-content-between align-items-center rounded my-2.5" style="background-color: rgba(233, 196, 106, .5);" id="notif-header">
+    <span class="pl-3">Data yang sedang digunakan tidak dapat dihapus !</span>
+    <div class="close text-xl mr-3" id="tutup">
+        <button class="font-semibold">X</button>
+    </div>
+</div>
+<!-- end of Header Notification -->
+
+<div class="row">
+    <div class="col-6">
+        <div class="page-heading">
+            <h3>Kategori</h3>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="d-flex flex-row-reverse">
+            <a href="?p=kategori/tambah" class="btn btn-outline-primary">Tambah</a>
+        </div>
+    </div>
+</div>
+
+<div class="page-content">
+    <section class="row">
+        <div class="col-12 col-lg-12">
+            <div class="row">
+                <div class="col-12 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>Kategori</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="targetDataKategori">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    #notif{
+        position: absolute;
+        z-index: 99999;
+        bottom: -15rem;
+        top: 0;
+        right: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        display: none;
+    }
+    #notif > .pesan{
+        position: fixed;
+        padding: 5rem;
+        /* top: 10%; */
+        top: -100rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: .5rem;
+        animation: animate2 1s cubic-bezier(0.03, 0.01, 0, 1.83) forwards;
+        background-color: rgba(27, 27, 41, .8);
+    }
+    @keyframes animate2 {
+        0%{
+            opacity: 0;
+            display: none;
+            height: 1rem;
+        }100%{
+            opacity: 1;
+            display: flex;
+        }
+    }
+    #notif > .pesan > .logo{
+        width: 50%;
+        height: 50%;
+    }
+    #notif > .pesan > .message > h1{
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #fff;
+        animation: animate1 .6s alternate forwards;
+        animation-timing-function: cubic-bezier(0.47, 0.08, 0.62, 1.4);
+        opacity: 0;
+    }
+    @keyframes animate1 {
+        0%{
+            font-size: 0;
+            opacity: 0;
+        }100%{
+            font-size: 1.8rem;
+            margin-bottom: .5rem;
+            opacity: 1;
+        }
+    }
+</style>
+<!-- Notification -->
+<div class="notif absolute z-99999" id="notif">
+    <div class="pesan pb-5">
+        <div class="close font-bold text-2xl text-white -mt-[4.5rem] text-right w-[135%] box-border hover:cursor-pointer" style="text-align: right;">X</div>
+        <div class="logo d-flex justify-content-center align-center my-4" style="width: 5rem; background-color: #fff; border-radius: 50%; padding: -1rem;">
+            <img src="assets/images/gif/success4.gif" alt="">
+        </div>
+        <div class="message">
+            
+        </div>
+    </div>
+</div>
+<!-- End of Notification -->
+
+<!-- pop up box -->
+<style>
+    .modal-popup{
+        display: none;
+    }
+    .modal-popup-del{
+        display: none;
+    }
+</style>
+<div class="modal-popup text-[#1B1B29] bg-[#1b1b2980] fixed inset-0 z-50 flex-row justify-content-center items-center">
+    <div class="w-[350px] h-[9rem] bg-[#fff] rounded-[.5rem] flex flex-col items-center" id="box">
+        <span class="messege font-semibold text-center text-sm md:text-sm lg:text-md mt-[2.5rem] capitalize" id="textConfirm">apakah anda yakin ingin logout ?</span>
+        <div class="confirm flex items-center mt-[3rem] mb-5 ml-[12rem]">
+            <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="confirmErr">Tidak</a>
+            <a href="?p=logout.php" class="confirmScs font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="success">Ya</a>
+        </div>
+    </div>
+</div>
+<!-- popup confirm hapus -->
+<div class="modal-popup-del text-[#1B1B29] bg-[#1b1b2980] fixed inset-0 z-50 flex-row justify-content-center items-center">
+    <div class="w-[350px] h-[9rem] bg-[#fff] rounded-[.5rem] flex flex-col items-center" id="box">
+        <span class="messege font-semibold text-center text-sm md:text-sm lg:text-md mt-[2.5rem] capitalize" id="textConfirm">Apakah Yakin Ingin Menghapus ?</span>
+        <div class="confirm flex items-center mt-[3rem] mb-5 ml-[12rem]">
+            <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="confirmErr">Tidak</a>
+            <a href="#" class="font-semibold text-xs md:text-sm lg:text-md mx-[1rem]" id="success">Ya</a>
+        </div>
+    </div>
+</div>
+<!-- end of pop up box -->

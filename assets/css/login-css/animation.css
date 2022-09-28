@@ -1,0 +1,171 @@
+/* ANIMASI BG */
+.bg-wall {
+    width: 500px;
+    height: 100vh;
+    border: none;
+    background: rgb(108,99,255);
+    background: linear-gradient(155deg, rgba(108,99,255,1) 0%, rgba(108,99,255,1) 41%, rgba(31,29,60,1) 100%); 
+    margin-top: -760px;
+    margin-left: 70%;
+    rotate: 45deg;
+    border-radius: 20px;
+    box-shadow: 30px -31px 0px -1px rgba(0,0,0,0.62);
+    -webkit-box-shadow: 30px -31px 0px -1px rgba(0,0,0,0.62);
+    -moz-box-shadow: 30px -31px 0px -1px rgba(0,0,0,0.62);
+}
+.bg-programmer {
+    position: absolute;
+    z-index: 99;
+    width: 400px;
+    height: 400px;
+    margin-left: 50%;
+    margin-top: 100px;
+    animation: up-and-down1;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+img.bg-creative {
+    z-index: 99;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-left: 550px;
+    margin-top: -300px;
+    animation: up-and-down;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+img.bg-financial {
+    z-index: 99;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-left: 80%;
+    margin-top: -350px;
+    animation: up-and-down2;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes up-and-down {
+    0% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes up-and-down1 {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes up-and-down2 {
+    0% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+/* END ANIMASI BG */
+
+/* ANIMASI TITLE */
+@keyframes myAnimate {
+    0%{
+        margin-top: 0;
+    }
+    50%{
+        margin-top: -.5rem;
+        width: 2rem;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+/* END ANIMASI TITLE */
+
+/* ANIMASI DOT */
+.particle {
+    position: relative;
+}
+
+.particle span {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgb(0, 60, 163);
+    border-radius: 50%;
+    animation: animate;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.particle span.part2 {
+    position: absolute;
+    margin-left: 250px;
+    width: 10px;
+    height: 10px;
+    background: rgb(109, 252, 0);
+    border-radius: 50%;
+    animation: animate2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.particle span.part3 {
+    position: absolute;
+    transform: rotate(90deg);
+    margin-left: 100px;
+    width: 13px;
+    height: 13px;
+    background: rgb(255, 128, 0);
+    border-radius: 50%;
+    animation: animate3;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(500px);
+    }
+}
+@keyframes animate2 {
+    0% {
+        transform: translateY(500px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+@keyframes animate3 {
+    0% {
+        transform: translateY(450px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+/* END ANIMASI DOT */
