@@ -54,7 +54,6 @@ const data = async () => {
         return response.json();
     })
     .then(response => {
-        console.log(response);
         textBarang.textContent = response; 
     });
 

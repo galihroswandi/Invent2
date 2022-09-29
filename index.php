@@ -23,4 +23,37 @@
     if( !session ){
         document.location.href = 'login.html';
     }
+
+    function getUrlVars(param=null){
+        if(param !== null){
+            let vars = [], hash;
+            let hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    
+            for(let i = 0; i < hashes.length; i++){
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }  
+            return vars[param];
+        }else{
+            return null;
+        }
+    }
+
+    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    sidebarItems.forEach(el => {
+        if( el.classList.contains('active') ){
+            el.classList.remove('active');
+        }else if( getUrlVars('p') ){
+            const active = getUrlVars('p');
+            if( el.classList.contains(active) ){
+                el.classList.add('active');
+            }
+        }else{
+            if( el.classList.contains('dashboard') ){
+                el.classList.add('active');
+            }
+        }
+    })
+
 </script>
