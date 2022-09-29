@@ -46,7 +46,10 @@
             el.classList.remove('active');
         }else if( getUrlVars('p') ){
             const active = getUrlVars('p');
-            if( el.classList.contains(active) ){
+            console.log() 
+            if( el.classList.contains(active.replace('/tambah', ''))){
+                el.classList.add('active');
+            }else if(el.classList.contains(active.replace('/ubah', ''))){
                 el.classList.add('active');
             }
         }else{
