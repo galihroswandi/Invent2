@@ -87,6 +87,7 @@ $(document).ready(function(){
                     message.style.opacity = '1';
                     message.style.display = 'flex';
                     pesan.style.top = '10%';
+                    notif_header.style.display = 'none';
                     text.innerHTML = `<h1 class='capitalize'>${response.msg}</h1>`;
                     setTimeout(() => {
                         message.style.display = 'none';

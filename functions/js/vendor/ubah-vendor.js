@@ -26,6 +26,7 @@ $(document).ready(function(){
         const nm_vendor = $('#nm_vendor').val();
         const alamat = $('#alamat').val();
         const no_telp = $('#no_telp').val();
+        console.log(nm_vendor, alamat, no_telp);
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -81,7 +82,7 @@ $(document).ready(function(){
         }
     }
 
-    $('#btn-ubah').click(() => {
+    $('#submit').click(() => {
         prosesUbahData();
     })
 
