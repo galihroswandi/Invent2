@@ -30,7 +30,7 @@ $(document).ready(function(){
                         merk += `<option value="${response[i].id_merk}" selected>${response[i].nm_merk}</option>`;
                     }
                 }
-                $('#merk').append(merk);
+                $('#merk_ubah_brg').append(merk);
             }
         })
     }
@@ -53,7 +53,7 @@ $(document).ready(function(){
 
                 }
                 
-                $('#kategori').append(kategori);
+                $('#kategori_ubah_brg').append(kategori);
             }
         })
     }
@@ -68,16 +68,16 @@ $(document).ready(function(){
             dataType : "JSON",
             success : function(response){
                
-                $('#kd_brg').val(response.kd_brg);
-                $('#nama').val(response.nm_brg);
-                $('#stok').val(response.stok);
-                $('#spesifikasi').val(response.spesifikasi);
+                $('#kd_ubah_brg').val(response.kd_brg);
+                $('#nama_ubah_brg').val(response.nm_brg);
+                $('#stok_ubah_brg').val(response.stok);
+                $('#spesifikasi_ubah_brg').val(response.spesifikasi);
 
                 getMerk(response.merk);
                 getKategori(response.kategori);
                 getSatuan(response.satuan);
 
-                $('#submit').click(function(){
+                $('#ubah-brg').click(function(){
                     prosesUbahData(id); 
                 })
             }
@@ -98,20 +98,21 @@ $(document).ready(function(){
                         satuan += `<option value="${response[i].id_satuan}" selected>${response[i].satuan}</option>`;
                     }
                 }
-                $('#satuan').append(satuan);
+                $('#satuan_ubah_brg').append(satuan);
             }
         })
 
     }
 
     function prosesUbahData(id) {
-        const kd_brg = $('#kd_brg').val();
-        const nama_barang = $('#nama').val();
-        const merk = $('#merk').val();
-        const kategori = $('#kategori').val();
-        const satuan = $('#satuan').val();
-        const stok = $('#stok').val();
-        const spesifikasi = $('#spesifikasi').val();
+
+        const kd_brg = $('#kd_ubah_brg').val();
+        const nama_barang = $('#nama_ubah_brg').val();
+        const merk = $('#merk_ubah_brg').val();
+        const kategori = $('#kategori_ubah_brg').val();
+        const satuan = $('#satuan_ubah_brg').val();
+        const stok = $('#stok_ubah_brg').val();
+        const spesifikasi = $('#spesifikasi_ubah_brg').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -174,12 +175,13 @@ $(document).ready(function(){
     }
 
     function resetForm(){
-        $('#kd_brg').val('');
-        $('#nama').val('');
-        $('#merk').val('');
-        $('#satuan').val('');
-        $('#kategori').val('');
-        $('#spesifikasi').val('');  
+        $('#kd_ubah_brg').val('');
+        $('#nama_ubah_brg').val('');
+        $('#merk_ubah_brg').val('');
+        $('#kategori_ubah_brg').val('');
+        $('#satuan_ubah_brg').val('');
+        $('#stok_ubah_brg').val('');
+        $('#spesifikasi_ubah_brg').val('');  
     }
     ubahData();
 

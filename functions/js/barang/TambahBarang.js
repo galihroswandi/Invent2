@@ -5,19 +5,19 @@ $(document).ready(function(){
     getSatuan();
     getMerk();
 
-    $('#submit').click(function(){
+    $('#tambah-brg').click(function(){
         tambahData();
     })
 
     function tambahData(){
 
-        const kd_barang = $('#kd_brg').val();
-        const nama_barang = $('#nama').val();
-        const merk = $('#merk').val();
-        const satuan = $('#satuan').val();
-        const stok = $('#stok').val();
-        const kategori = $('#kategori').val();
-        const spesifikasi = $('#spesifikasi').val();
+        const kd_barang = $('#kd_tambah_brg').val();
+        const nama_barang = $('#nama_tambah_brg').val();
+        const merk = $('#merk_tambah_brg').val();
+        const kategori = $('#kategori_tambah_brg').val();
+        const satuan = $('#satuan_tambah_brg').val();
+        const stok = $('#stok_tambah_brg').val();
+        const spesifikasi = $('#spesifikasi_tambah_brg').val();
 
         // DOM Success Notification
         const message = document.getElementById('notif');
@@ -86,7 +86,7 @@ $(document).ready(function(){
             dataType : "JSON",
             success : function(response){
                 let kd_barang = response;
-                $('#kd_brg').attr('value', `${kd_barang}`);
+                $('#kd_tambah_brg').attr('value', `${kd_barang}`);
             }
         })
     }
@@ -101,7 +101,7 @@ $(document).ready(function(){
                 for(let i = 0; i < response.length; i++){
                     satuan += getShowSatuan(response, i);
                 }
-                $('#satuan').append(satuan);
+                $('#satuan_tambah_brg').append(satuan);
             }
         })
 
@@ -118,7 +118,7 @@ $(document).ready(function(){
                     kategori += getShowKategori(response, i);
                 }
                 
-                $('#kategori').append(kategori);
+                $('#kategori_tambah_brg').append(kategori);
             }
         })
     }
@@ -133,7 +133,7 @@ $(document).ready(function(){
                 for(let i = 0; i < response.length; i++){
                     merk += getShowMerk(response, i);
                 }
-                $('#merk').append(merk);
+                $('#merk_tambah_brg').append(merk);
             }
         })
     }
@@ -151,12 +151,13 @@ $(document).ready(function(){
     }
 
     function resetForm(){
-        $('#kd_brg').val('');
-        $('#nama').val('');
-        $('#merk').val('');
-        $('#satuan').val('');
-        $('#kategori').val('');
-        $('#spesifikasi').val('');  
+        $('#kd_tambah_brg').val('');
+        $('#nama_tambah_brg').val('');
+        $('#merk_tambah_brg').val('');
+        $('#kategori_tambah_brg').val('');
+        $('#satuan_tambah_brg').val('');
+        $('#stok_tambah_brg').val('');
+        $('#spesifikasi_tambah_brg').val('');
     }
     
     const popup = document.querySelector('.modal-popup');
