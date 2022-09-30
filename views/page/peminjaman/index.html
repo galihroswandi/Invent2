@@ -15,8 +15,8 @@
                         <div class="row">
                             <div class="col-11">
                                 <div class="form-group">
-                                    <label for="kd_pinjam">Kode Pinjam</label>
-                                    <input type="text" class="form-control w-[108.3%]" id="kd_pinjam"
+                                    <label for="kd_pinjam_tambah">Kode Pinjam</label>
+                                    <input type="text" class="form-control w-[108.3%]" id="kd_pinjam_tambah"
                                         disabled>
                                 </div>
                             </div>
@@ -24,8 +24,8 @@
                         <div class="row">
                             <div class="col-11">
                                 <div class="form-group">
-                                    <label for="nm_pinjam_brg">Nama Barang :</label>
-                                        <select type="text" name="" id="nm_pinjam_brg" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[108.3%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
+                                    <label for="nm_brg_pinjam_tambah">Nama Barang :</label>
+                                        <select type="text" name="" id="nm_brg_pinjam_tambah" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[108.3%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
                                             <option value="">-- Nama Barang --</option>
                                         </select>
                                 </div>
@@ -33,8 +33,8 @@
                         <div class="row">
                             <div class="col-11">
                                 <div class="form-group">
-                                    <label for="jmlh_pinjam">Jumlah Pinjam :</label>
-                                    <input type="number" class="form-control input-bawah w-[111%]" id="jmlh_pinjam" placeholder="" autocomplete="off">
+                                    <label for="jmlh_pinjam_tambah">Jumlah Pinjam :</label>
+                                    <input type="number" class="form-control input-bawah w-[111%]" id="jmlh_pinjam_tambah" placeholder="" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -42,8 +42,8 @@
                             <div class="col-11">
                                 <div class="form-group">
                                     <div class="form-group">
-                                        <label for="nm_pinjam_ruangan">Nama Ruangan :</label>
-                                        <select type="text" name="" id="nm_pinjam_ruangan" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[111%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
+                                        <label for="nm_ruangan_pinjam_tambah">Nama Ruangan :</label>
+                                        <select type="text" name="" id="nm_ruangan_pinjam_tambah" placeholder="Nama Kategori" class="dark-select bg-slate-50 w-[111%] h-10 rounded-[5px]" style="text-transform: capitalize; border: 1px solid #E2E8F0;" required>
                                             <option value="">-- Nama Ruangan --</option>
                                         </select>
                                     </div>
@@ -53,30 +53,30 @@
                         <div class="row">
                             <div class="col-11">
                                 <div class="form-group">
-                                    <label for="nm_peminjam">Nama Peminjam :</label>
-                                    <input type="text" class="form-control input-bawah w-[111%]" id="nm_peminjam" placeholder="-" autocomplete="off">
+                                    <label for="nm_peminjam_tambah">Nama Peminjam :</label>
+                                    <input type="text" class="form-control input-bawah w-[111%]" id="nm_peminjam_tambah" placeholder="-" autocomplete="off">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-11">
                                 <div class="form-group">
-                                    <label for="tgl_pinjam">Tanggal Pinjam :</label>
-                                    <input type="date" class="form-control input-bawah w-[111%]" id="tgl_pinjam" placeholder="0" autocomplete="off">
+                                    <label for="tgl_pinjam_tambah">Tanggal Pinjam :</label>
+                                    <input type="date" class="form-control input-bawah w-[111%]" id="tgl_pinjam_tambah" placeholder="0" autocomplete="off">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-11">
                                 <div class="form-group">
-                                    <label for="status_pinjam">Status Pinjam :</label>
-                                    <input type="text" class="form-control input-bawah w-[111%]" id="status_pinjam" placeholder="" autocomplete="off"></input>
+                                    <label for="status_pinjam_tambah">Status Pinjam :</label>
+                                    <input type="text" class="form-control input-bawah w-[111%]" id="status_pinjam_tambah" placeholder="" autocomplete="off"></input>
                                 </div>
                             </div>
                         </div>
                         <div class="row btn-tambah">
                             <div class="col-12 d-flex justify-content-end">
-                                <button id="submit" class="btn btn-sm btn-primary mb-1">Tambah</button>
+                                <button id="tambah_peminjaman" class="btn btn-sm btn-primary mb-1">Tambah</button>
                             </div>
                         </div>
                     </div>
@@ -99,26 +99,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="targetDataPeminjaman">
-                                        <!-- <tr>  
-                                            <td>001</td>
-                                            <td>Mouse Logitech</td>
-                                            <td>LAB 3</td>
-                                            <td>01-10-2022</td>
-                                            <td>0</td>
-                                            <td class="aksi">
-                                                <button class='btn btn-outline-primary btn-sm btn-edit' data-id="${response[i].id_ruangan}" id="btn-ubah">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                                </svg>
-                                                </button>
-                                                <button class='btn btn-outline-danger btn-sm btn-hapus' data-id="${response[i].id_ruangan}" id='btn-hapus'>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                                    </svg>
-                                                </button>
-                                            </td>
-                                        </tr>   -->
+
                                     </tbody>
                                 </table>
                                 <div class="dataNull text-center">

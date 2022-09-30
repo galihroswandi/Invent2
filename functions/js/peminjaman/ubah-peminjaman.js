@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     // EVENT KETIKA BUTTON UBAH DI KLIK
-    $('#ubah-peminjaman').click(() => {
+    $('#ubah_peminjaman').click(() => {
         prosesUbahData();
     })
     
@@ -28,12 +28,12 @@ $(document).ready(function(){
     const prosesUbahData = () => {
 
         const id_peminjaman = getUrlVars('data');
-        const kd_pinjam = $("#kd_ubah_pinjam").val();
-        const nm_brg = $("#nm_ubahpinjam_brg").val();
-        const ruangan = $('#nm_ubahpinjam_ruangan').val();
-        const tanggal = $('#tgl_ubah_pinjam').val();
-        const status = $('#status_ubah_pinjam').val();
-
+        const kd_pinjam = $("#kd_pinjam_ubah").val();
+        const nm_brg = $("#nm_brg_pinjam_ubah").val();
+        const ruangan =$('#nm_ruangan_pinjam_ubah').val();
+        const tanggal = $('#tgl_pinjam_ubah').val();
+        const status = $('#status_pinjam_ubah').val();
+        
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
         const text = document.querySelector('.message');
@@ -111,8 +111,7 @@ $(document).ready(function(){
                 }
             }
 
-            $('#nm_ubahpinjam_ruangan').append(ruangan);
-
+            $('#nm_ruangan_pinjam_ubah').append(ruangan);
         })
     }
 
@@ -136,8 +135,7 @@ $(document).ready(function(){
                 }
             }
             
-            $('#nm_ubahpinjam_brg').append(barang);
-
+            $('#nm_brg_pinjam_ubah').append(barang);
         })
         
     }
@@ -153,9 +151,9 @@ $(document).ready(function(){
             dataType : "JSON",
             success : (response => {
 
-                document.getElementById('kd_ubah_pinjam').value = response.kode;
-                document.getElementById('tgl_ubah_pinjam').value = response.tanggal;
-                document.getElementById('status_ubah_pinjam').value = response.status;
+                document.getElementById('kd_pinjam_ubah').value = response.kode;
+                document.getElementById('tgl_pinjam_ubah').value = response.tanggal;
+                document.getElementById('status_pinjam_ubah').value = response.status;
 
                 // DROPDOWN
                 getBarang(response.id_brg);
@@ -167,11 +165,11 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $("#kd_pinjam").val('');
-        $("#nm_brg").val('');
-        $('#nm_ruangan').val('');
-        $('#tgl_pinjam').val('');
-        $('#status').val('');
+        $("#kd_pinjam_ubah").val('');
+        $("#nm_brg_pinjam_ubah").val('');
+        $('#nm_ruangan_pinjam_ubah').val('');
+        $('#tgl_pinjam_ubah').val('');
+        $('#status_pinjam_ubah').val('');
     }
 
     getSingleData();

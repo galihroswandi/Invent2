@@ -22,7 +22,7 @@ $(document).ready(function(){
 
     function prosesUbahData() {
         const id_kategori = getUrlVars('data');
-        const nm_kategori = $('#kategori').val();
+        const nm_kategori = $('#kategori_ubah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -75,7 +75,7 @@ $(document).ready(function(){
 
     }
 
-    $('#submit').click(() => {
+    $('#ubah_kategori').click(() => {
         prosesUbahData();
     })
 
@@ -88,14 +88,14 @@ $(document).ready(function(){
             data : `id_kategori=${id_kategori}`,
             dataType : "JSON",
             success : function(response) {
-                $('#kategori').val(response.nm_kategori);
+                $('#kategori_ubah').val(response.nm_kategori);
             }
         })
 
     }
 
     const resetForm = () => {
-        $('#kategori').val('');
+        $('#kategori_ubah').val('');
     }
     ReadData();
 

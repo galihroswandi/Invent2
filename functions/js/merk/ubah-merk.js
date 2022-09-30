@@ -30,10 +30,10 @@ $(document).ready(function(){
             data : `id_merk=${id_merk}`,
             dataType : "JSON",
             success : function(response) {
-                $('#merk').val(response.nm_merk);
+                $('#merk_ubah').val(response.nm_merk);
 
                 // EVENT KETIKA TOMBOL SUBMIT DI KLIK
-                $('#submit').click(function(){
+                $('#ubah_merk').click(function(){
                     prosesUbahData(response.id_merk);
                 })
             }
@@ -43,7 +43,7 @@ $(document).ready(function(){
 
     const prosesUbahData = (id_merk) => {
 
-        const merk = $('#merk').val();
+        const merk = $('#merk_ubah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -100,7 +100,7 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#merk').val('');
+        $('#merk_ubah').val('');
     }
 
     singleData();

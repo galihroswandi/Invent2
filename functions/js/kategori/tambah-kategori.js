@@ -1,12 +1,12 @@
 $(document).ready(function(){   
 
-    $('#submit').click(function(){
+    $('#tambah-kategori').click(function(){
         prosesTambahData();
     })
 
     function prosesTambahData(){
 
-        const nm_kategori = $('#kategori').val();
+        const nm_kategori = $('#kategori_tambah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -63,7 +63,7 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#kategori').val('');
+        $('#kategori_tambah').val('');
     }
 
     const popup = document.querySelector('.modal-popup');

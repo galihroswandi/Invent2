@@ -41,7 +41,7 @@ $(document).ready(function(){
                 }else{
                     barang += `<option value="${response[i].id_brg}" selected >${response[i].nm_brg}</option>`;
                 }
-                $('#nm_ubah_brg').append(barang);
+                $('#nm_brg_pengajuan_ubah').append(barang);
 
             }
 
@@ -71,7 +71,7 @@ $(document).ready(function(){
                 }
             }
 
-            $('#vendor_ubah').append(vendor);
+            $('#vendor_pengajuan_ubah').append(vendor);
 
         })
     }
@@ -86,10 +86,10 @@ $(document).ready(function(){
             dataType : "JSON",
             success : (response) => {
                 
-                $('#kd_ubah_pengajuan').val(response.kode);
-                $('#harga_ubah_brg').val(response.hrg_beli);
-                $('#tgl_ubah_pengajuan').val(response.tanggal);
-                $('#status_ubah').val(response.status);
+                $('#kd_pengajuan_ubah').val(response.kode);
+                $('#hrg_brg_pengajuan_ubah').val(response.hrg_beli);
+                $('#tgl_pengajuan_ubah').val(response.tanggal);
+                $('#status_pengajuan_ubah').val(response.status);
 
                 // dropdown
                 getBarang(response.id_brg);
@@ -103,11 +103,11 @@ $(document).ready(function(){
     const prosesUbahData = () => {
 
         const id_pengajuan = getUrlVars('data');
-        const nama_barang = $('#nm_ubah_brg').val();
-        const hrg_beli = $('#harga_ubah_brg').val();
-        const vendor = $('#vendor_ubah').val();
-        const tanggal = $('#tgl_ubah_pengajuan').val();
-        const status = $('#status_ubah').val();
+        const nama_barang = $('#nm_brg_pengajuan_ubah').val();
+        const hrg_beli = $('#hrg_brg_pengajuan_ubah').val();
+        const vendor = $('#vendor_pengajuan_ubah').val();
+        const tanggal = $('#tgl_pengajuan_ubah').val();
+        const status = $('#status_pengajuan_ubah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -165,18 +165,18 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#kd_pengajuan').val('');
-        $('#nm_brg').val('');
-        $('#harga_brg').val('');
-        $('#vendor').val('');
-        $('#tgl_pengajuan').val('');
-        $('#status').val('');
+        $('#kd_pengajuan_ubah').val('');
+        $('#nm_brg_pengajuan_ubah').val('');
+        $('#hrg_brg_pengajuan_ubah').val('');
+        $('#vendor_pengajuan_ubah').val('');
+        $('#tgl_pengajuan_ubah').val('');
+        $('#status_pengajuan_ubah').val('');
     }
 
     getSingleData();
 
     // event ketika tombol ubah di klik
-    $('#submit').click(() => {
+    $('#ubah_pengajuan').click(() => {
         prosesUbahData();
     })
     

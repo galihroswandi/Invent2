@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
-    $('#submit').click(function(){
+    $('#tambah_merk').click(function(){
         prosesTambahMerk();
     })
 
     const prosesTambahMerk = () => {
 
-        const merk = $('#merk').val();
+        const merk = $('#merk_tambah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -64,7 +64,7 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#merk').val('');
+        $('#merk_tambah').val('');
     }
 
     const popup = document.querySelector('.modal-popup');

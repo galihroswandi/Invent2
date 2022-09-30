@@ -12,7 +12,7 @@ $(document).ready(function(){
         })
         .then(response => {
             
-            document.getElementById('kd_ruangan').setAttribute('value', response);
+            document.getElementById('kd_ruangan_tambah').setAttribute('value', response);
 
         });
 
@@ -20,9 +20,9 @@ $(document).ready(function(){
 
     const prosesTambahData = () => {
 
-        const kd_ruangan = document.getElementById('kd_ruangan').value;
-        const nm_ruangan = document.getElementById('nm_ruangan').value;
-        const spesifikasi = document.getElementById('spesifikasi').value;
+        const kd_ruangan = document.getElementById('kd_ruangan_tambah').value;
+        const nm_ruangan = document.getElementById('nm_ruangan_tambah').value;
+        const spesifikasi = document.getElementById('spesifikasi_ruangan_tambah').value;
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -80,12 +80,12 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#kd_ruangan').val('');
-        $('#nm_ruangan').val('');
-        $('#spesifikasi').val('');
+        $('#kd_ruangan_tambah').val('');
+        $('#nm_ruangan_tambah').val('');
+        $('#spesifikasi_ruangan_tambah').val('');
     }
 
-    const btn_submit = document.getElementById('submit');
+    const btn_submit = document.getElementById('tambah_ruangan');
     btn_submit.addEventListener('click', () => {
         prosesTambahData();
     })

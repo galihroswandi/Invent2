@@ -31,12 +31,12 @@ $(document).ready(function(){
             success : (response) => {
                 
                 // Tambah Kan response ke komponent html
-                $('#kd_ruangan').val(response.kd_ruangan);
-                $('#nm_ruangan').val(response.nm_ruangan);
-                $('#spesifikasi').val(response.spesifikasi);
+                $('#kd_ruangan_ubah').val(response.kd_ruangan);
+                $('#nm_ruangan_ubah').val(response.nm_ruangan);
+                $('#spesifikasi_ruangan_ubah').val(response.spesifikasi);
 
                 // Event ketika tombol submit di klik
-                document.getElementById('submit').addEventListener('click', () => {
+                document.getElementById('ubah_ruangan').addEventListener('click', () => {
                     prosesUbahData(response.id_ruangan);
                 })
             } 
@@ -46,9 +46,9 @@ $(document).ready(function(){
 
     const prosesUbahData = (id_ruangan) => {
 
-        const kd_ruangan = $('#kd_ruangan').val();
-        const nm_ruangan = $('#nm_ruangan').val();
-        const spesifikasi = $('#spesifikasi').val();
+        const kd_ruangan = $('#kd_ruangan_ubah').val();
+        const nm_ruangan = $('#nm_ruangan_ubah').val();
+        const spesifikasi = $('#spesifikasi_ruangan_ubah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -106,9 +106,9 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#kd_ruangan').val('');
-        $('#nm_ruangan').val('');
-        $('#spesifikasi').val('');
+        $('#kd_ruangan_ubah').val('');
+        $('#nm_ruangan_ubah').val('');
+        $('#spesifikasi_ruangan_ubah').val('');
     }
 
     getSingleData();

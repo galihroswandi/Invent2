@@ -4,12 +4,12 @@ $(document).ready(function(){
     const ReadData = async () => {
     
         $('#targetDataPengajuan').html('');
-        $('#kd_pengajuan').val('');
-        $('#nm_brg').val('');
-        $('#hrg_beli').val('');
-        $('#vendor').val('');
-        $('#tgl_pengajuan').val('');
-        $('#status').val('');
+        $('#kd_pengajuan_tambah').val('');
+        $('#nm_brg_pengajuan_tambah').val('');
+        $('#hrg_beli_pengajuan_tambah').val('');
+        $('#vendor_pengajuan_tambah').val('');
+        $('#tgl_pengajuan_tambah').val('');
+        $('#status_pengajuan_tambah').val('');
 
         const url = "functions/php/pengajuan/GetPengajuan.php";
         await fetch(url)
@@ -57,7 +57,7 @@ $(document).ready(function(){
     }
 
     // TAMBAH PENGAJUAN
-    $('#btn-tambah').click(() => {
+    $('#tambah_pengajuan').click(() => {
         prosesTambahData();
     })
 
@@ -73,12 +73,12 @@ $(document).ready(function(){
         const btn_close = document.querySelector('.pesan > .close');
 
         const id_admin = sessionStorage.getItem('I');
-        const kode_pengajuan = $('#kd_pengajuan').val();
-        const nm_brg = $('#nm_brg').val();
-        const hrg_beli = $('#hrg_beli').val();
-        const vendor = $('#vendor').val();
-        const tgl_pengajuan = $('#tgl_pengajuan').val();
-        const status = $('#status').val();
+        const kode_pengajuan = $('#kd_pengajuan_tambah').val();
+        const nm_brg = $('#nm_brg_pengajuan_tambah').val();
+        const hrg_beli = $('#hrg_beli_pengajuan_tambah').val();
+        const vendor = $('#vendor_pengajuan_tambah').val();
+        const tgl_pengajuan = $('#tgl_pengajuan_tambah').val();
+        const status = $('#status_pengajuan_tambah').val();
 
         if( !kode_pengajuan || !tgl_pengajuan || !vendor || !status ){
             alert('Field Tidak boleh kosong !');
@@ -213,7 +213,7 @@ $(document).ready(function(){
         .then(response => {
         
             response.map( brg => {
-                $('#nm_brg').append(showOptionBarang(brg));
+                $('#nm_brg_pengajuan_tambah').append(showOptionBarang(brg));
             } )
         
         })    
@@ -229,7 +229,7 @@ $(document).ready(function(){
             return response.json();
         })
         .then(response => {
-            document.getElementById('kd_pengajuan').value = response;
+            document.getElementById('kd_pengajuan_tambah').value = response;
         })
     }
 
@@ -245,7 +245,7 @@ $(document).ready(function(){
         .then(response => {
             
             response.map(v => {
-                $('#vendor').append(showOptionVendor(v));
+                $('#vendor_pengajuan_tambah').append(showOptionVendor(v));
             });
         });
     }
@@ -284,12 +284,12 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#kd_pengajuan').val('');
-        $('#nm_brg').val('');
-        $('#hrg_beli').val('');
-        $('#vendor').val('');
-        $('#tgl_pengajuan').val('');
-        $('#status').val('');
+        $('#kd_pengajuan_tambah').val('');
+        $('#nm_brg_pengajuan_tambah').val('');
+        $('#hrg_beli_pengajuan_tambah').val('');
+        $('#vendor_pengajuan_tambah').val('');
+        $('#tgl_pengajuan_tambah').val('');
+        $('#status_pengajuan_tambah').val('');
     }
 
     getKode();

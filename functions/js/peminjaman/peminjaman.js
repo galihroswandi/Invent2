@@ -110,20 +110,20 @@ $(document).ready(function(){
     }
 
     // EVENT KETIKA TOMBOL TAMBAH DI KLIK
-    $('#submit').click(() => {
+    $('#tambah_peminjaman').click(() => {
         prosesTambahData();
     })
 
     const prosesTambahData = () => {
 
         const id_admin = sessionStorage.getItem('I');
-        const kd_pinjam = $('#kd_pinjam').val();
-        const nm_brg = $('#nm_pinjam_brg').val();
-        const jumlah = $('#jmlh_pinjam').val();
-        const ruangan = $('#nm_pinjam_ruangan').val();
-        const peminjaman = $('#nm_peminjam').val();
-        const tgl_pinjam = $('#tgl_pinjam').val();
-        const statusPinjam = $('#status_pinjam').val();
+        const kd_pinjam = $('#kd_pinjam_tambah').val();
+        const nm_brg = $('#nm_brg_pinjam_tambah').val();
+        const jumlah = $('#jmlh_pinjam_tambah').val();
+        const ruangan = $('#nm_ruangan_pinjam_tambah').val();
+        const peminjaman = $('#nm_peminjam_tambah').val();
+        const tgl_pinjam = $('#tgl_pinjam_tambah').val();
+        const statusPinjam = $('#status_pinjam_tambah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -195,7 +195,7 @@ $(document).ready(function(){
         .then(response => {
             
             response.map( ruangan => {
-                $('#nm_pinjam_ruangan').append(getShowRuangan(ruangan));
+                $('#nm_ruangan_pinjam_tambah').append(getShowRuangan(ruangan));
             })
 
         });
@@ -213,7 +213,7 @@ $(document).ready(function(){
         .then(response => {
            
             response.map(brg => {
-                $('#nm_pinjam_brg').append(getShowBarang(brg));
+                $('#nm_brg_pinjam_tambah').append(getShowBarang(brg));
             })
 
         });
@@ -229,7 +229,7 @@ $(document).ready(function(){
             return response.json()
         })
         .then(response => {
-            $('#kd_pinjam').val(response);
+            $('#kd_pinjam_tambah').val(response);
         })
     }
 
@@ -266,13 +266,13 @@ $(document).ready(function(){
     } 
 
     const resetForm = () => {
-        $('#kd_pinjam').val('');
-        $('#nm_brg').val('');
-        $('#jmlh_pinjam').val('');
-        $('#nm_ruangan').val('');
-        $('#nm_peminjam').val('');
-        $('#tgl_pinjam').val('');
-        $('#status').val('');
+        $('#kd_pinjam_tambah').val('');
+        $('#nm_brg_pinjam_tambah').val('');
+        $('#jmlh_pinjam_tambah').val('');
+        $('#nm_ruangan_pinjam_tambah').val('');
+        $('#nm_peminjam_tambah').val('');
+        $('#tgl_pinjam_tambah').val('');
+        $('#status_pinjam_tambah').val('');
     }
 
     getKdPinjam();

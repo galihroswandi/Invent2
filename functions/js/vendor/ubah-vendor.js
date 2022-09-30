@@ -23,9 +23,9 @@ $(document).ready(function(){
     function prosesUbahData() {
 
         const id_vendor = getUrlVars('data');
-        const nm_vendor = $('#nm_vendor').val();
-        const alamat = $('#alamat').val();
-        const no_telp = $('#no_telp').val();
+        const nm_vendor = $('#nm_vendor_ubah').val();
+        const alamat = $('#alamat_vendor_ubah').val();
+        const no_telp = $('#no_telp_vendor_ubah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -81,7 +81,7 @@ $(document).ready(function(){
         }
     }
 
-    $('#submit').click(() => {
+    $('#ubah_vendor').click(() => {
         prosesUbahData();
     })
 
@@ -94,18 +94,18 @@ $(document).ready(function(){
             data : `id_vendor=${id_vendor}`,
             dataType : "JSON",
             success : function(response) {
-                $('#nm_vendor').val(response.nm_vendor);
-                $('#alamat').val(response.alamat);
-                $('#no_telp').val(response.no_telp);
+                $('#nm_vendor_ubah').val(response.nm_vendor);
+                $('#alamat_vendor_ubah').val(response.alamat);
+                $('#no_telp_vendor_ubah').val(response.no_telp);
             }
         })
 
     }
 
     const resetForm = () => {
-        $('#nm_vendor').val('');
-        $('#alamat').val('');
-        $('#no_telp').val('');
+        $('#nm_vendor_ubah').val('');
+        $('#alamat_ubah').val('');
+        $('#no_telp_ubah').val('');
     }
     ReadData();
 

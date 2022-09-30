@@ -7,8 +7,8 @@ $(document).ready(function(){
     function prosesTambahData(){
 
         const nm_vendor = $('#nm_vendor').val();
-        const alamat = $('#alamat').val();
-        const no_telp = $('#no_telp').val();
+        const alamat = $('#alamat_vendor').val();
+        const no_telp = $('#no_telp_vendor').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -66,8 +66,8 @@ $(document).ready(function(){
 
     function resetForm(){
         $('#nm_vendor').val('');
-        $('#alamat').val('');
-        $('#no_telp').val('');
+        $('#alamat_vendor').val('');
+        $('#no_telp_vendor').val('');
     }
 
     const popup = document.querySelector('.modal-popup');

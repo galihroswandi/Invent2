@@ -30,10 +30,10 @@ $(document).ready(function(){
             data : `id_satuan=${id_satuan}`,
             dataType : "JSON",
             success : function(response) {
-                $('#satuan').val(response.satuan);
+                $('#satuan_ubah').val(response.satuan);
 
                 // EVENT KETIKA TOMBOL SUBMIT DI KLIK
-                $('#submit').click(function(){
+                $('#ubah_satuan').click(function(){
                     prosesUbahData(response.id_satuan);
                 })
             }
@@ -43,7 +43,7 @@ $(document).ready(function(){
 
     const prosesUbahData = (id_satuan) => {
 
-        const satuan = $('#satuan').val();
+        const satuan = $('#satuan_ubah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -96,7 +96,7 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#satuan').val('');
+        $('#satuan_ubah').val('');
     }
 
     singleData();

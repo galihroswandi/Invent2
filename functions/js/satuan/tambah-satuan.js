@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
-    $('#submit').click(function(){
+    $('#tambah_satuan').click(function(){
         prosesTambahData();
     })
 
     function prosesTambahData(){
-        const nm_satuan = $('#satuan').val();
+        const nm_satuan = $('#satuan_tambah').val();
 
         const message = document.getElementById('notif');
         const pesan = document.querySelector('.pesan');
@@ -63,7 +63,7 @@ $(document).ready(function(){
     }
 
     const resetForm = () => {
-        $('#satuan').val('');
+        $('#satuan_tambah').val('');
     }
    
     const popup = document.querySelector('.modal-popup');
