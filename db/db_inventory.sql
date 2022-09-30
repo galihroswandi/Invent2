@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2022 at 09:53 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.4.20
+-- Waktu pembuatan: 30 Sep 2022 pada 03.53
+-- Versi server: 10.4.19-MariaDB
+-- Versi PHP: 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_admin`
+-- Struktur dari tabel `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -35,7 +35,7 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_admin`
+-- Dumping data untuk tabel `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`id_admin`, `username`, `password`, `status`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `tbl_admin` (`id_admin`, `username`, `password`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_barang`
+-- Struktur dari tabel `tbl_barang`
 --
 
 CREATE TABLE `tbl_barang` (
@@ -59,7 +59,7 @@ CREATE TABLE `tbl_barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_barang`
+-- Dumping data untuk tabel `tbl_barang`
 --
 
 INSERT INTO `tbl_barang` (`id_brg`, `kd_brg`, `nm_brg`, `kategori`, `satuan`, `stok`, `merk`, `spesifikasi`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `tbl_barang` (`id_brg`, `kd_brg`, `nm_brg`, `kategori`, `satuan`, `s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_detail_peminjaman`
+-- Struktur dari tabel `tbl_detail_peminjaman`
 --
 
 CREATE TABLE `tbl_detail_peminjaman` (
@@ -80,7 +80,7 @@ CREATE TABLE `tbl_detail_peminjaman` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_detail_pengajuan`
+-- Struktur dari tabel `tbl_detail_pengajuan`
 --
 
 CREATE TABLE `tbl_detail_pengajuan` (
@@ -91,17 +91,10 @@ CREATE TABLE `tbl_detail_pengajuan` (
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tbl_detail_pengajuan`
---
-
-INSERT INTO `tbl_detail_pengajuan` (`id_detail_pengajuan`, `id_pengajuan`, `id_brg`, `hrg_beli`, `status`) VALUES
-(51, 73, 102, 2147483647, 0);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_kategori`
+-- Struktur dari tabel `tbl_kategori`
 --
 
 CREATE TABLE `tbl_kategori` (
@@ -110,7 +103,7 @@ CREATE TABLE `tbl_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_kategori`
+-- Dumping data untuk tabel `tbl_kategori`
 --
 
 INSERT INTO `tbl_kategori` (`id_kategori`, `nm_kategori`) VALUES
@@ -119,7 +112,7 @@ INSERT INTO `tbl_kategori` (`id_kategori`, `nm_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_merk`
+-- Struktur dari tabel `tbl_merk`
 --
 
 CREATE TABLE `tbl_merk` (
@@ -128,7 +121,7 @@ CREATE TABLE `tbl_merk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_merk`
+-- Dumping data untuk tabel `tbl_merk`
 --
 
 INSERT INTO `tbl_merk` (`id_merk`, `nm_merk`) VALUES
@@ -138,7 +131,7 @@ INSERT INTO `tbl_merk` (`id_merk`, `nm_merk`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_peminjaman`
+-- Struktur dari tabel `tbl_peminjaman`
 --
 
 CREATE TABLE `tbl_peminjaman` (
@@ -153,7 +146,7 @@ CREATE TABLE `tbl_peminjaman` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pengajuan`
+-- Struktur dari tabel `tbl_pengajuan`
 --
 
 CREATE TABLE `tbl_pengajuan` (
@@ -165,17 +158,10 @@ CREATE TABLE `tbl_pengajuan` (
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tbl_pengajuan`
---
-
-INSERT INTO `tbl_pengajuan` (`id_pengajuan`, `id_admin`, `kode`, `tanggal`, `id_vendor`, `status`) VALUES
-(73, 1, 'PNJ0004', '2022-09-20', 8, 0);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_ruangan`
+-- Struktur dari tabel `tbl_ruangan`
 --
 
 CREATE TABLE `tbl_ruangan` (
@@ -186,7 +172,7 @@ CREATE TABLE `tbl_ruangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_ruangan`
+-- Dumping data untuk tabel `tbl_ruangan`
 --
 
 INSERT INTO `tbl_ruangan` (`id_ruangan`, `kd_ruangan`, `nm_ruangan`, `spesifikasi`) VALUES
@@ -196,7 +182,7 @@ INSERT INTO `tbl_ruangan` (`id_ruangan`, `kd_ruangan`, `nm_ruangan`, `spesifikas
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_satuan`
+-- Struktur dari tabel `tbl_satuan`
 --
 
 CREATE TABLE `tbl_satuan` (
@@ -205,7 +191,7 @@ CREATE TABLE `tbl_satuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_satuan`
+-- Dumping data untuk tabel `tbl_satuan`
 --
 
 INSERT INTO `tbl_satuan` (`id_satuan`, `satuan`) VALUES
@@ -215,7 +201,7 @@ INSERT INTO `tbl_satuan` (`id_satuan`, `satuan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_vendor`
+-- Struktur dari tabel `tbl_vendor`
 --
 
 CREATE TABLE `tbl_vendor` (
@@ -226,7 +212,7 @@ CREATE TABLE `tbl_vendor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_vendor`
+-- Dumping data untuk tabel `tbl_vendor`
 --
 
 INSERT INTO `tbl_vendor` (`id_vendor`, `nm_vendor`, `alamat`, `no_telp`) VALUES
@@ -238,13 +224,13 @@ INSERT INTO `tbl_vendor` (`id_vendor`, `nm_vendor`, `alamat`, `no_telp`) VALUES
 --
 
 --
--- Indexes for table `tbl_admin`
+-- Indeks untuk tabel `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `tbl_barang`
+-- Indeks untuk tabel `tbl_barang`
 --
 ALTER TABLE `tbl_barang`
   ADD PRIMARY KEY (`id_brg`),
@@ -253,7 +239,7 @@ ALTER TABLE `tbl_barang`
   ADD KEY `merk` (`merk`);
 
 --
--- Indexes for table `tbl_detail_peminjaman`
+-- Indeks untuk tabel `tbl_detail_peminjaman`
 --
 ALTER TABLE `tbl_detail_peminjaman`
   ADD PRIMARY KEY (`id_detail_peminjaman`),
@@ -261,7 +247,7 @@ ALTER TABLE `tbl_detail_peminjaman`
   ADD KEY `id_brg` (`id_brg`);
 
 --
--- Indexes for table `tbl_detail_pengajuan`
+-- Indeks untuk tabel `tbl_detail_pengajuan`
 --
 ALTER TABLE `tbl_detail_pengajuan`
   ADD PRIMARY KEY (`id_detail_pengajuan`),
@@ -269,19 +255,19 @@ ALTER TABLE `tbl_detail_pengajuan`
   ADD KEY `id_brg` (`id_brg`);
 
 --
--- Indexes for table `tbl_kategori`
+-- Indeks untuk tabel `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `tbl_merk`
+-- Indeks untuk tabel `tbl_merk`
 --
 ALTER TABLE `tbl_merk`
   ADD PRIMARY KEY (`id_merk`);
 
 --
--- Indexes for table `tbl_peminjaman`
+-- Indeks untuk tabel `tbl_peminjaman`
 --
 ALTER TABLE `tbl_peminjaman`
   ADD PRIMARY KEY (`id_peminjaman`),
@@ -289,7 +275,7 @@ ALTER TABLE `tbl_peminjaman`
   ADD KEY `id_ruangan` (`id_ruangan`);
 
 --
--- Indexes for table `tbl_pengajuan`
+-- Indeks untuk tabel `tbl_pengajuan`
 --
 ALTER TABLE `tbl_pengajuan`
   ADD PRIMARY KEY (`id_pengajuan`),
@@ -297,99 +283,99 @@ ALTER TABLE `tbl_pengajuan`
   ADD KEY `id_vendor` (`id_vendor`);
 
 --
--- Indexes for table `tbl_ruangan`
+-- Indeks untuk tabel `tbl_ruangan`
 --
 ALTER TABLE `tbl_ruangan`
   ADD PRIMARY KEY (`id_ruangan`);
 
 --
--- Indexes for table `tbl_satuan`
+-- Indeks untuk tabel `tbl_satuan`
 --
 ALTER TABLE `tbl_satuan`
   ADD PRIMARY KEY (`id_satuan`);
 
 --
--- Indexes for table `tbl_vendor`
+-- Indeks untuk tabel `tbl_vendor`
 --
 ALTER TABLE `tbl_vendor`
   ADD PRIMARY KEY (`id_vendor`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tbl_admin`
+-- AUTO_INCREMENT untuk tabel `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_barang`
+-- AUTO_INCREMENT untuk tabel `tbl_barang`
 --
 ALTER TABLE `tbl_barang`
   MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
--- AUTO_INCREMENT for table `tbl_detail_peminjaman`
+-- AUTO_INCREMENT untuk tabel `tbl_detail_peminjaman`
 --
 ALTER TABLE `tbl_detail_peminjaman`
-  MODIFY `id_detail_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_detail_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `tbl_detail_pengajuan`
+-- AUTO_INCREMENT untuk tabel `tbl_detail_pengajuan`
 --
 ALTER TABLE `tbl_detail_pengajuan`
-  MODIFY `id_detail_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_detail_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
--- AUTO_INCREMENT for table `tbl_kategori`
+-- AUTO_INCREMENT untuk tabel `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `tbl_merk`
+-- AUTO_INCREMENT untuk tabel `tbl_merk`
 --
 ALTER TABLE `tbl_merk`
   MODIFY `id_merk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `tbl_peminjaman`
+-- AUTO_INCREMENT untuk tabel `tbl_peminjaman`
 --
 ALTER TABLE `tbl_peminjaman`
-  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `tbl_pengajuan`
+-- AUTO_INCREMENT untuk tabel `tbl_pengajuan`
 --
 ALTER TABLE `tbl_pengajuan`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
--- AUTO_INCREMENT for table `tbl_ruangan`
+-- AUTO_INCREMENT untuk tabel `tbl_ruangan`
 --
 ALTER TABLE `tbl_ruangan`
   MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `tbl_satuan`
+-- AUTO_INCREMENT untuk tabel `tbl_satuan`
 --
 ALTER TABLE `tbl_satuan`
   MODIFY `id_satuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `tbl_vendor`
+-- AUTO_INCREMENT untuk tabel `tbl_vendor`
 --
 ALTER TABLE `tbl_vendor`
   MODIFY `id_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tbl_barang`
+-- Ketidakleluasaan untuk tabel `tbl_barang`
 --
 ALTER TABLE `tbl_barang`
   ADD CONSTRAINT `tbl_barang_ibfk_4` FOREIGN KEY (`kategori`) REFERENCES `tbl_kategori` (`id_kategori`),
@@ -397,28 +383,28 @@ ALTER TABLE `tbl_barang`
   ADD CONSTRAINT `tbl_barang_ibfk_6` FOREIGN KEY (`merk`) REFERENCES `tbl_merk` (`id_merk`);
 
 --
--- Constraints for table `tbl_detail_peminjaman`
+-- Ketidakleluasaan untuk tabel `tbl_detail_peminjaman`
 --
 ALTER TABLE `tbl_detail_peminjaman`
   ADD CONSTRAINT `tbl_detail_peminjaman_ibfk_1` FOREIGN KEY (`id_peminjaman`) REFERENCES `tbl_peminjaman` (`id_peminjaman`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tbl_detail_peminjaman_ibfk_2` FOREIGN KEY (`id_brg`) REFERENCES `tbl_barang` (`id_brg`);
 
 --
--- Constraints for table `tbl_detail_pengajuan`
+-- Ketidakleluasaan untuk tabel `tbl_detail_pengajuan`
 --
 ALTER TABLE `tbl_detail_pengajuan`
   ADD CONSTRAINT `tbl_detail_pengajuan_ibfk_2` FOREIGN KEY (`id_brg`) REFERENCES `tbl_barang` (`id_brg`),
   ADD CONSTRAINT `tbl_detail_pengajuan_ibfk_3` FOREIGN KEY (`id_pengajuan`) REFERENCES `tbl_pengajuan` (`id_pengajuan`);
 
 --
--- Constraints for table `tbl_peminjaman`
+-- Ketidakleluasaan untuk tabel `tbl_peminjaman`
 --
 ALTER TABLE `tbl_peminjaman`
   ADD CONSTRAINT `tbl_peminjaman_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `tbl_admin` (`id_admin`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tbl_peminjaman_ibfk_2` FOREIGN KEY (`id_ruangan`) REFERENCES `tbl_ruangan` (`id_ruangan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `tbl_pengajuan`
+-- Ketidakleluasaan untuk tabel `tbl_pengajuan`
 --
 ALTER TABLE `tbl_pengajuan`
   ADD CONSTRAINT `tbl_pengajuan_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `tbl_admin` (`id_admin`) ON DELETE CASCADE ON UPDATE CASCADE,
