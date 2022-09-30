@@ -1,6 +1,4 @@
 <?php
-require_once 'library/fpdf.php';
-
     //session_start();
     
     //if(!empty($_SESSION['id_user'])){
