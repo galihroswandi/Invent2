@@ -17,7 +17,7 @@ $(document).ready(function(){
     }
     
     if( getUrlVars('data') == null ){
-        document.location.href = 'pengajuan.html';
+        document.location.href = '?p=pengajuan';
     }
 
     const getBarang = async (id=null) => {

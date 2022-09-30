@@ -17,7 +17,7 @@ $(document).ready(function(){
     }
 
     if( getUrlVars('data') == null ){
-        document.location.href = 'vendor.html';
+        document.location.href = '?p=kategori';
     }
 
     function prosesUbahData() {

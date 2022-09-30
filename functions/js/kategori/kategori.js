@@ -15,7 +15,7 @@ $(document).ready(function(){
                 document.getElementById('targetDataKategori').innerHTML = kategori_barang;
 
                 // Event ketika Tombol ubah di klik
-                const btn_ubah = document.querySelectorAll('#btn-ubah');
+                const btn_ubah = document.querySelectorAll('#btn-ubah_kategori');
                 btn_ubah.forEach(el => {
                     el.addEventListener('click', function() {
                         let id = this.dataset.id;
@@ -24,7 +24,7 @@ $(document).ready(function(){
                 })
 
                 // Event ketika tombol delelte di klik 
-                const btn_del = document.querySelectorAll('#btn-hapus');
+                const btn_del = document.querySelectorAll('#btn-hapus_kategori');
                 const popup = document.querySelector('.modal-popup-del');
                 const textPopup = popup.querySelector('#textConfirm');
 

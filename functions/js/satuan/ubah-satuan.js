@@ -69,7 +69,7 @@ $(document).ready(function(){
                     btn_close.style.display = 'none';
                     resetForm();
                     setTimeout(() => {
-                        document.location.href = 'satuan.html';
+                        document.location.href = '?p=satuan';
                         message.style.display = 'none';
                         message.style.opacity = '0';
                         pesan.style.top = '-100rem';
@@ -79,7 +79,7 @@ $(document).ready(function(){
                     message.style.opacity = '1';
                     message.style.display = 'flex';
                     pesan.style.top = '10%';
-                    logo.innerHTML = `<img src="../../assets/images/gif/error.gif" alt="">`;
+                    logo.innerHTML = `<img src="assets/images/gif/error.gif" alt="">`;
                     logo.style.padding = '1rem';
                     logo.style.boxSizing = 'border-box';
                     textErr.innerHTML = `<h1 class='capitalize'>${response.msg}</h1>`;
