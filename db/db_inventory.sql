@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Sep 2022 pada 03.53
+-- Waktu pembuatan: 10 Okt 2022 pada 09.32
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 7.4.20
 
@@ -63,7 +63,8 @@ CREATE TABLE `tbl_barang` (
 --
 
 INSERT INTO `tbl_barang` (`id_brg`, `kd_brg`, `nm_brg`, `kategori`, `satuan`, `stok`, `merk`, `spesifikasi`) VALUES
-(102, 'BRG002', 'MECHANICAL KEYBOARD', 8, 3, 49, 1, 'asdfadfdfdfgdfgsdf');
+(102, 'BRG002', 'MECHANICAL KEYBOARD', 8, 3, 49, 1, 'asdfadfdfdfgdfgsdf'),
+(119, 'BRG003', 'fafasdfas', 8, 6, 3, 1, 'dasfasdfasdf');
 
 -- --------------------------------------------------------
 
@@ -76,6 +77,13 @@ CREATE TABLE `tbl_detail_peminjaman` (
   `id_peminjaman` int(11) NOT NULL,
   `id_brg` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_detail_peminjaman`
+--
+
+INSERT INTO `tbl_detail_peminjaman` (`id_detail_peminjaman`, `id_peminjaman`, `id_brg`) VALUES
+(25, 18, 102);
 
 -- --------------------------------------------------------
 
@@ -90,6 +98,14 @@ CREATE TABLE `tbl_detail_pengajuan` (
   `hrg_beli` int(3) NOT NULL,
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_detail_pengajuan`
+--
+
+INSERT INTO `tbl_detail_pengajuan` (`id_detail_pengajuan`, `id_pengajuan`, `id_brg`, `hrg_beli`, `status`) VALUES
+(56, 78, 102, 341341, 0),
+(59, 81, 119, 2451231, 5);
 
 -- --------------------------------------------------------
 
@@ -125,8 +141,7 @@ CREATE TABLE `tbl_merk` (
 --
 
 INSERT INTO `tbl_merk` (`id_merk`, `nm_merk`) VALUES
-(1, 'logitechs'),
-(5, 'ASUS ROG STRIX ');
+(1, 'logitechs');
 
 -- --------------------------------------------------------
 
@@ -143,6 +158,13 @@ CREATE TABLE `tbl_peminjaman` (
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tbl_peminjaman`
+--
+
+INSERT INTO `tbl_peminjaman` (`id_peminjaman`, `id_admin`, `kode`, `tanggal`, `id_ruangan`, `status`) VALUES
+(18, 1, 'KDP0002', '2022-09-07', 24, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -157,6 +179,14 @@ CREATE TABLE `tbl_pengajuan` (
   `id_vendor` int(11) NOT NULL,
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_pengajuan`
+--
+
+INSERT INTO `tbl_pengajuan` (`id_pengajuan`, `id_admin`, `kode`, `tanggal`, `id_vendor`, `status`) VALUES
+(78, 1, 'PNJ0003', '2022-09-28', 15, 0),
+(81, 1, 'PNJ0004', '2022-09-22', 15, 5);
 
 -- --------------------------------------------------------
 
@@ -176,8 +206,7 @@ CREATE TABLE `tbl_ruangan` (
 --
 
 INSERT INTO `tbl_ruangan` (`id_ruangan`, `kd_ruangan`, `nm_ruangan`, `spesifikasi`) VALUES
-(24, 'RGN001', 'adfadsf', 'adfadsfasdf'),
-(25, 'RGN002', 'adfasdfas', 'adfafas');
+(24, 'RGN001', 'adfadsf', 'adfadsfasdf');
 
 -- --------------------------------------------------------
 
@@ -216,7 +245,6 @@ CREATE TABLE `tbl_vendor` (
 --
 
 INSERT INTO `tbl_vendor` (`id_vendor`, `nm_vendor`, `alamat`, `no_telp`) VALUES
-(8, 'anjasss', 'adfad', '4546'),
 (15, 'adfasdfa', 'asdfadfas', '342351');
 
 --
@@ -314,61 +342,61 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT untuk tabel `tbl_barang`
 --
 ALTER TABLE `tbl_barang`
-  MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_detail_peminjaman`
 --
 ALTER TABLE `tbl_detail_peminjaman`
-  MODIFY `id_detail_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_detail_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_detail_pengajuan`
 --
 ALTER TABLE `tbl_detail_pengajuan`
-  MODIFY `id_detail_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_detail_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_merk`
 --
 ALTER TABLE `tbl_merk`
-  MODIFY `id_merk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_merk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_peminjaman`
 --
 ALTER TABLE `tbl_peminjaman`
-  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pengajuan`
 --
 ALTER TABLE `tbl_pengajuan`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_ruangan`
 --
 ALTER TABLE `tbl_ruangan`
-  MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_satuan`
 --
 ALTER TABLE `tbl_satuan`
-  MODIFY `id_satuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_satuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_vendor`
 --
 ALTER TABLE `tbl_vendor`
-  MODIFY `id_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
